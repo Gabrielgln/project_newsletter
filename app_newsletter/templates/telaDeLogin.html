@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Newsletter</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: url('https://avatars.githubusercontent.com/u/80015771?v=4');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /*remove as bordas*/
+        }
+
+        form {
+            width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            display: block;
+            margin: 10px auto;
+            width: 100%;
+            height: 50px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            height: 30px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h3>Login</h3>
+        <div>
+            E-mail: <input name="email" placeholder="Digite seu e-mail" type="text">
+            Senha: <input name="senha" placeholder="Digite sua senha" type="password">
+            <button>Entrar</button>
+            <a href=" {% url 'cadastro' %} ">Criar conta</a>
+        </div>
+
+    </form>
+</body>
+</html>

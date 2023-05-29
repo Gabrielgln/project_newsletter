@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for cadastro in cadastros %}
+    <h1>Bem-vindo, {{ cadastro.nome }}!</h1>
+    {% endfor %}
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+        </tr>
+        {% for cadastro in cadastros %}
+        <tr>
+            <td>{{ cadastro.id }}</td>
+            <td>{{ cadastro.nome }}</td>
+            <td>{{ cadastro.email }}</td>
+        </tr>
+        <a href="{% url 'add_email' cadastro.id %}">Cadastrar email no Newsletter</a>
+        {% endfor %}
+    </table>
+</body>
+</html>
